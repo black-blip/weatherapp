@@ -1,17 +1,34 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        {% load static %}
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" type="text/css" href="{% static 'weather/style.css' %}"/>
     </head>
     <body>
         <header>Weather App</header>
-        <h5>Find your city</h5>
-        <form method="POST" class="search">
-            <input type="text" placeholder="City" name="city"> <br>
-            <input type='submit' placeholder="Search">
-        </form>
+        <div class="app">
+            <h5>Find your city</h5>
+            <div>
+                <form method="POST" class="search">
+                    {% csrf_token %}
+                    <div>
+                    <input type="text" placeholder="City" name="city">
+                    </div>
+                    <br>
+                    <div>
+                    <input type='submit' placeholder="Add">
+                    </div>
+                </form>
+            </div> <br>
+            <div>
+                <p>
+                    <h5> {{ cityweather.city }} </h5> <br>
+                    <h5>{{ cityweather.temperature }}°F</h5>
+                </p>
+            </div>
+        </div>
     </body>
 </html>
