@@ -4,7 +4,7 @@ from django.views.generic import View
 from .models import City
 # Create your views here.
 def index(request):
-    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=67202aa61e9bebd603b24c7514ea3098'
+    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid={}'
     cities = City.objects.all()
 
     data = []
