@@ -1,5 +1,5 @@
 # weatherapp
-100 Days of Code
+
 
 Weather Application using OpenWeatherMap (https://openweathermap.org)
 
